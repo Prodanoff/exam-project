@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+/* HEADER */
+body {
+    position: relative;
+    padding-top: 5em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    #header .inner {
+        max-width: 65em;
+        width: calc(100% - 6em);
+        margin: 0 auto;
+        position: relative;
+    }
+
+        @media screen and (max-width: 480px) {
+
+            #header .inner {
+                max-width: 90%;
+                width: 90%;
+            }
+
+        }
+
+    #header .logo {
+        font-family: 'Pacifico', cursive;
+        display: inline-block;
+        height: inherit;
+        left: 0;
+        line-height: inherit;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        color: gold;
+        font-size: 1.75em;
+        text-transform: none;
+        font-weight: normal;
+        padding: 0;
+    }
+
+        #header .logo:hover {
+            color: rgba(229, 71, 75, 0.75);
+        }
+
+    #header a {
+        -moz-transition: color 0.2s ease-in-out;
+        -webkit-transition: color 0.2s ease-in-out;
+        -ms-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-in-out;
+        display: inline-block;
+        padding: 0 2em;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .85em;
+    }
+
+        #header a:hover {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        #header a:last-child {
+            padding-right: 0em;
+        }
+
+        @media screen and (max-width: 736px) {
+
+            #header a {
+                padding: 0 0.5em;
+            }
+
+        }
+
+@media screen and (max-width: 480px) {
+
+    #header {
+        min-width: 320px;
+    }
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+       /* BANNER */
+		#banner {
+		
+		padding: 13em 0 11em 0;
+		background-color: #0c0c0c;
+		background-image: url("./components/Banner/banner.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 20% left;
+		text-align: left;
+		position: relative;
+		z-index: 9999;
+	}
+        /* Articles */
+        #articles {
+            padding: 6em 0 4em 0;
+            background: #f3f3f3;
+            background: -moz-linear-gradient(left, #f3f3f3 0%, #f3f3f3 50%, #f7f7f7 0%, #f7f7f7 100%);
+            background: -webkit-linear-gradient(left, #f3f3f3 0%, #f3f3f3 50%, #f7f7f7 0%, #f7f7f7 100%);
+            background: linear-gradient(to right, #f3f3f3 0%, #f3f3f3 50%, #f7f7f7 0%, #f7f7f7 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#f7f7f7',GradientType=1 );
+        }
+    
+            #articles .inner {
+                display: -ms-flexbox;
+                display: -moz-flex;
+                display: -webkit-flex;
+                display: -ms-flex;
+                display: flex;
+                -moz-flex-direction: row;
+                -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                flex-direction: row;
+            }
+    
+                #articles .inner article {
+                    width: 50%;
+                }
+    
+                    #articles .inner article:first-child {
+                        padding-right: 6em;
+                    }
+    
+                    #articles .inner article:last-child {
+                        padding-left: 6em;
+                    }
+    
+            @media screen and (max-width: 980px) {
+    
+                #articles {
+                    padding: 4em 0 2em 0;
+                    background: -moz-linear-gradient(top, #f3f3f3 0%, #f3f3f3 50%, #f7f7f7 0%, #f7f7f7 100%);
+                    background: -webkit-linear-gradient(top, #f3f3f3 0%, #f3f3f3 50%, #f7f7f7 0%, #f7f7f7 100%);
+                    background: linear-gradient(to bottom, #f3f3f3 0%, #f3f3f3 50%, #f7f7f7 0%, #f7f7f7 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#f7f7f7',GradientType=0 );
+                }
+    
+                    #articles .inner {
+                        -moz-flex-direction: column;
+                        -webkit-flex-direction: column;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                    }
+    
+                        #articles .inner article {
+                            width: 100%;
+                        }
+    
+                            #articles .inner article:first-child {
+                                padding-right: 0;
+                                padding-bottom: 2em;
+                            }
+    
+                            #articles .inner article:last-child {
+                                padding-left: 0;
+                                padding-top: 2em;
+                            }
+    
+            }
+    
+            @media screen and (max-width: 736px) {
+    
+                #articles {
+                    padding: 2em 0 0.1em 0;
+                }
+    
+            }
+		
+       

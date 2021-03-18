@@ -1,7 +1,16 @@
-const Banner = () => {
+
+const Banner  = () => {
     return (
-        <section id="banner">
-        </section>
+        <div>
+            <div class="row">
+        <div class="tm-intro">
+
+         
+
+        </div>
+    </div>
+        </div>
+       
     );
 };
 

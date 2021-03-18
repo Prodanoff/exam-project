@@ -9,7 +9,7 @@ const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/softuni-movies', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/exam-react', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -22,7 +22,7 @@ app.use(express.json()); // IMPORTANT FOR REST API!!!
 app.use(auth);
 
 app.get('/', (req, res) => {
-    res.json({ message: 'It\'s working!'});
+    res.json({ message: 'rest api on'});
 });
 
 app.use('/api', routes);

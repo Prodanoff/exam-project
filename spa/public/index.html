@@ -10,34 +10,121 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Margarita Pordanova</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400">   
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">                
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      
+    <link rel="stylesheet" href="css/magnific-popup.css">                                     
+    <link rel="stylesheet" href="css/templatemo-style.css">                         
+    <title>PMU Margarita Prodanova</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script src="js/jquery-1.11.3.min.js"></script>           
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>                 
+    <script src="js/jquery.singlePageNav.min.js"></script> 
+    <script src="js/jquery.magnific-popup.min.js"></script>     
+    
+    <!-- Templatemo scripts -->
+    <script>     
+   
+        $(document).ready(function(){
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+            var mobileTopOffset = 54;
+            var desktopTopOffset = 80;
+            var topOffset = desktopTopOffset;
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+            if($(window).width() <= 767) {
+                topOffset = mobileTopOffset;
+            }
+            
+            /* Single page nav
+            -----------------------------------------*/
+            $('#tmNavbar').singlePageNav({
+               'currentClass' : "active",
+                offset : topOffset,
+                'filter': ':not(.external)'
+            }); 
+
+            /* Handle nav offset upon window resize
+            -----------------------------------------*/
+            $(window).resize(function(){
+                if($(window).width() <= 767) {
+                    topOffset = mobileTopOffset;
+                } 
+                else {
+                    topOffset = desktopTopOffset;
+                }
+
+                $('#tmNavbar').singlePageNav({
+                    'currentClass' : "active",
+                    offset : topOffset,
+                    'filter': ':not(.external)'
+                });
+            });
+            
+
+            /* Collapse menu after click 
+            -----------------------------------------*/
+            $('#tmNavbar a').click(function(){
+                $('#tmNavbar').collapse('hide');
+            });
+
+            /* Turn navbar background to solid color starting at section 2
+            ---------------------------------------------------------------*/
+            var target = $("#tm-section-2").offset().top - topOffset;
+
+            if($(window).scrollTop() >= target) {
+                $(".tm-navbar-container").addClass("bg-inverse");
+            }
+            else {
+                $(".tm-navbar-container").removeClass("bg-inverse");
+            }
+
+            $(window).scroll(function(){
+               
+                if($(this).scrollTop() >= target) {
+                    $(".tm-navbar-container").addClass("bg-inverse");
+                }
+                else {
+                    $(".tm-navbar-container").removeClass("bg-inverse");
+                }
+            });
+
+
+            /* Smooth Scrolling
+             * https://css-tricks.com/snippets/jquery/smooth-scrolling/
+            --------------------------------------------------------------*/
+            $('a[href*="#"]:not([href="#"])').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+                    && location.hostname == this.hostname) {
+                    
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    
+                    if (target.length) {
+                        
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - topOffset
+                        }, 1000);
+                        return false;
+                    }
+                }
+            }); 
+
+          
+            /* Magnific pop up
+            ------------------------- */
+            $('.tm-img-grid').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: {enabled:true}            
+            });            
+        });
+
+    </script>             
+
   </body>
 </html>

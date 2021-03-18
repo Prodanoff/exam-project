@@ -1,8 +1,12 @@
 import logo from './logo.svg';
-import style from './App.css';
+import './App.css';
 import Header from './components/Header/Header'
-import Banner from './components/Banner/Banner'
 import Articles from './components/Articles/Articles'
+import Gallery from './components/Gallery/Gallery'
+import Banner from './components/Banner/Banner'
+import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -11,6 +15,10 @@ function App() {
 			<Header />
 			<Banner />
 			<Articles/>
+			<Gallery/>
+			<Login/>
+			<Register/>
+			<Footer/>
 		</div>
 	);
 }

@@ -1,4 +1,4 @@
-import OneArticle from "../Articles/OneArticle/OneArticle"
+
 
 const OnePicture = () => {
     return (

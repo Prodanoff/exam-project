@@ -2,6 +2,7 @@
 
 const Login = () => {
     return (
+        <div class="row">
         <div class="row gray-bg">
 
             <section id="tm-section-4" class="tm-section">
@@ -25,6 +26,7 @@ const Login = () => {
                 </section>
 
 
+        </div>
         </div>
     )
 }

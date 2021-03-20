@@ -2,15 +2,15 @@ import OnePicture from './OnePictire'
 const Gallery = ()=>{
     return(
         
-        <div class="row">
+        <div className="row">
 
-        <section id="tm-section-3" class="tm-section">
-            <div class="tm-container text-xs-center">
+        <section id="tm-section-3" className="tm-section">
+            <div className="tm-container text-xs-center">
                 
-                <h2 class="blue-text tm-title">Галерия</h2>
-                <p class="margin-b-5">Снимки на работата ми .</p>
+                <h2 className="blue-text tm-title">Галерия</h2>
+                <p className="margin-b-5">Снимки на работата ми .</p>
                
-                <div class="tm-img-grid">
+                <div className="tm-img-grid">
                     <OnePicture/>
                     <OnePicture/>
                     <OnePicture/>

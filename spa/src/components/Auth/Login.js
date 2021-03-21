@@ -18,6 +18,7 @@ const Login = () => {
                             <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                                 <input type="text" id="contact_name" name="password" class="form-control" placeholder="password" required />
                             </div>
+                            
 
                             <button type="submit" class="btn tm-light-blue-bordered-btn pull-xs-right">Submit</button>
                         </form>

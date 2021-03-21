@@ -15,7 +15,7 @@ a, button { transition: all 0.3s ease; }
 a {	color: #666; }
 a:hover,
 a:focus {
-	color: #4EA7FF;
+	color: gold;
 	text-decoration: none;
 	outline: none;
 }
@@ -24,7 +24,7 @@ p { color: #666; }
 h3 { margin-bottom: 2.5rem; }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2;
+    background-color: black;
 }
 
 .tm-container { 
@@ -60,7 +60,7 @@ h3 { margin-bottom: 2.5rem; }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
-	color: #4EA7FF;
+	color: gold;
 }
 
 .navbar-toggler { 
@@ -89,7 +89,7 @@ button:focus { outline: none; }
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	height: 750px;	
+	height: 350px;	
 }
 
 @media (max-width: 1800px) {
@@ -141,8 +141,8 @@ button:focus { outline: none; }
 
 .gray-bg { background-color: #F4F4F4; }
 .dark-gray-text { color: #666666; }
-.blue-text { color: #006699; }
-.light-blue-text { color: #4EA7FF; }
+.blue-text { color: gold; }
+.light-blue-text { color: gold; }
 
 .btn {
   border-radius: 50px;
@@ -183,60 +183,60 @@ button:focus { outline: none; }
 
 .tm-light-blue-bordered-btn {	
 	background: transparent;
-    border: 2px solid #4EA7FF;    
-    color: #4EA7FF;
+    border: 2px solid ;    
+    color: gold;
 }
 
 .tm-light-blue-bordered-btn:hover,
 .tm-light-blue-bordered-btn:focus {	
-    background: #4EA7FF;
+    background: gold;
     color: white;
 }
 
 .tm-blue-btn {
-	background: #006699;
-	border: 2px solid #006699;
+	background: gold;
+	border: 2px solid gold;
 	color: white;
 }
 
 .tm-blue-btn:hover {
 	background: transparent;
-	color: #006699;
+	color: gold;
 }
 
 .tm-blue-bordered-btn {
 	background: transparent;
-	border: 2px solid #006699;
-	color: #006699;
+	border: 2px solid gold;
+	color: gold;
 }
 
 .tm-blue-bordered-btn:hover,
 .tm-blue-bordered-btn:focus {
-	background: #006699;
+	background: gold;
 	color: white;
 }
 
 .tm-green-btn {
-	background: #006666;
-	border: 2px solid #006666;
+	background: gold;
+	border: 2px solid gold;
 	color: white;
 }
 
 .tm-green-btn:hover,
 .tm-green-btn:focus {
 	background: transparent;
-	color: #006666;
+	color: gold;
 }
 
 .tm-green-bordered-btn {
 	background: transparent;
-	border: 2px solid #006666;
-	color: #006666;
+	border: 2px solid gold;
+	color: gold;
 }
 
 .tm-green-bordered-btn:hover,
 .tm-green-bordered-btn:focus {
-	background: #006666;
+	background: gold;
 	color: white;
 }
 

@@ -2,10 +2,10 @@
 import OneArticle from './OneArticle/OneArticle'
 const Articles  = () => {
     return (
-        <div class="row gray-bg">
+        <div className="row gray-bg">
                 
-                <div id="tm-section-2" class="tm-section">
-                    <div class="tm-container tm-container-wide">
+                <div id="tm-section-2" className="tm-section">
+                    <div className="tm-container tm-container-wide">
                         
                     <OneArticle/>
                     <OneArticle/>

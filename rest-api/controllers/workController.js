@@ -3,13 +3,14 @@ const Work = require('../models/Work');
 const { isAuth } = require('../middlewares/auth');
 
 router.get('/', (req, res) => {
+    
     Work.find()
         .then(works => {
             res.json(works);
         });
 });
 
-router.post('/', isAuth, (req, res) => {
+router.post('/', (req, res) => {
     let work = new Work(req.body);
 
     work.save()

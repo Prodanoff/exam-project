@@ -1,29 +1,34 @@
 import OnePicture from './OnePictire'
-const Gallery = ()=>{
-    return(
-        
-        <div className="row">
+import { useState, useEffect } from 'react'
+const Gallery = () => {
 
-        <section id="tm-section-3" className="tm-section">
-            <div className="tm-container text-xs-center">
-                
-                <h2 className="blue-text tm-title">Галерия</h2>
-                <p className="margin-b-5">Снимки на работата ми .</p>
-               
-                <div className="tm-img-grid">
-                    <OnePicture/>
-                    <OnePicture/>
-                    <OnePicture/>
-                    <OnePicture/>
-                    <OnePicture/>
-                    <OnePicture/>
-                    <OnePicture/>
-                    <OnePicture/>
-                </div>
+    const [works, setWorks] = useState([]);
+
+    useEffect(() => {
+
+        fetch('http://localhost:5000/api/work/')
+            .then(res => res.json())
+            .then(res => setWorks(res))
+
+    }, [])
+
+    return (
+
+        <div id="tm-section-2" class="tm-section">
+            <div class="tm-container tm-container-wide">
+                {
+                    works.map(work =>
+                        <OnePicture
+                            key={work._id}
+                            category={work.category}
+                            img={work.image}
+                            description={work.description}
+                        />)
+                }
             </div>
-        </section>
 
-    </div> 
+        </div>
+
     )
 }
 export default Gallery

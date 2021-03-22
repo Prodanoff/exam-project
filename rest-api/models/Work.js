@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const workSchema = new mongoose.Schema({
-    cathegory: String,
+    category: String,
     image: String,
     description: String,
 });

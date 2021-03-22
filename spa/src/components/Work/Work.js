@@ -1,4 +1,4 @@
-import Banner from "../Banner/Banner"
+
 
 const Work = () => {
     return(
@@ -11,7 +11,7 @@ const Work = () => {
                     <h2 class="blue-text tm-title text-xs-center">Add work</h2>
 
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                        <form action="index.html" method="post" class="tm-contact-form">
+                        <form action="/Work" method="POST" class="tm-contact-form">
                             <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                                 <input type="text" id="contact_name" name="username" class="form-control" placeholder="category" required />
                             </div>
@@ -32,4 +32,4 @@ const Work = () => {
         </div>
     )
 }
- export default Work
+export default Work

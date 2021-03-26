@@ -389,14 +389,13 @@ body.page-2 { padding-top: 80px; }
 	margin-right: auto;
 }
 
-.tm-description-box { padding: 6%; word-wrap: normal }
+.tm-description-box { padding: 6%; }
 .tm-description-text { margin-bottom: 1.5em;max-width:170px; ; }
 .tm-footer-text { margin-bottom: 1.5rem; }
 
 @media (min-width: 768px) {
 
-	/*http://stackoverflow.com/questions/18777235/center-content-in-responsive-bootstrap-navbar*/
-
+	
     .navbar .navbar-nav {
         display: inline-block;
         float: none;

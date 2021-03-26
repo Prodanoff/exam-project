@@ -1,11 +1,13 @@
-
+import{Link} from 'react-router-dom'
 
 const OnePicture = ({
+    id,
     category,
     img,
-    description
-}) => {
+    description,
 
+}) => {
+   
     return (
 
         <div class="col-md-4">
@@ -23,8 +25,7 @@ const OnePicture = ({
                     </p>
 
                     <div class="tm-flex-center">
-                        <a href="#" class="btn btn-default tm-normal-btn tm-green-btn">Изтриване</a>
-                        <a href="#" class="btn btn-default tm-normal-btn tm-green-bordered-btn">Редакция</a>
+                        <Link to={`/work/details/${id}`} class="btn btn-default tm-normal-btn tm-green-btn">Детайли</Link>
                     </div>
 
                 </div>

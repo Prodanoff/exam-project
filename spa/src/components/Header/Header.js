@@ -10,7 +10,6 @@ const Header = () => {
 
                     <div class="collapse navbar-toggleable-sm" id="tmNavbar">
 
-
                         <ul className="nav navbar-nav">
                             <li className="nav-item">
                                 <Link to="/login" className="nav-link">Login</Link>
@@ -19,7 +18,7 @@ const Header = () => {
                                 <Link to="/register" className="nav-link">Register</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/work" className="nav-link">Add</Link>
+                                <Link to="/AddWork" className="nav-link">Add</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/gallery" className="nav-link">Gallery</Link>
@@ -33,7 +32,7 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">Home</Link>
                             </li>
-                            
+
 
                         </ul>
 

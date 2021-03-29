@@ -7,7 +7,9 @@ const OnePicture = ({
     description,
 
 }) => {
-   
+   if(category=="ОчнаЛиния"){
+       category="Очна Линия"
+   }
     return (
 
         <div class="col-md-4">
@@ -25,7 +27,9 @@ const OnePicture = ({
                     </p>
 
                     <div class="tm-flex-center">
-                        <Link to={`/work/details/${id}`} class="btn btn-default tm-normal-btn tm-green-btn">Детайли</Link>
+                        <Link
+                        to={`/work/details/${id}`} 
+                        class="btn btn-default tm-normal-btn tm-green-btn">Детайли</Link>
                     </div>
 
                 </div>

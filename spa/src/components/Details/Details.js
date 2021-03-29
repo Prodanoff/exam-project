@@ -1,50 +1,51 @@
+import { useState, useEffect } from 'react'
+import {Link, Redirect , useHistory } from 'react-router-dom'
+
 const Details = (
     {
-        match
+        match,
+        
     }
 ) => {
-    return (
-
-        <div>
-            <div class="row">
-            <div id="tm-section-1" class="tm-section">
-                <div class="col-md-12">
-                    <h1 class="text-xs-center blue-text tm-page-2-title">Lumino Bootstrap 4.0 Columns</h1>
-                    <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">
-                        Etiam at rhoncus nisl. Nunc rutrum ac ante euismod cursus.
-                            Suspendisse imperdiet feugiat massa nec iaculis.
-                    </p>
-                                <img src="img/tm-1800x600-01.jpg" class="img-fluid tm-banner-img" alt="Image" />            
-                </div>
-              </div>                
-            </div>
-
-                    <div class="row">
-                        <div class="tm-section" id="tm-section-2">
-                            <div class="col-md-12">
-                                <p class="text-left tm-description">
-                                    Lumino theme is a Bootstrap 4.0 mobile compatible layout for your website.
-                                    Cras dolor neque, mollis et tortor eget, ornare hendrerit lectus. Donec
-                                    condimentum leo ut elementum consequat. Sed condimentum sagittis neque
-                                    in iaculis. Duis quis libero nec mauris porta luctus et sit amet turpis.
-                                    Proin auctor tortor quis ipsum dignissim, quis congue tortor.
-                        </p>
-                                <p class="text-left tm-description">
-                                    Aliquam non vestibulum mi, sed volutpat ipsum. Nunc ultricies quam id
-                                    mi semper, vitae mattis mi iaculis. Nullam tincidunt vehicula turpis at
-                                    porttitor. Sed bibendum odio non maximus suscipit. Pellentesque consectetur
-                                    orci id rutrum lacinia.
-                        </p>
-                                <div class="tm-flex-center">
-                                    <a href="#" class="btn btn-default btn-lg tm-gray-btn">Large</a>
-                                    <a href="#" class="btn btn-default btn-lg tm-gray-bordered-btn">Large</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        </div>
+    const history= useHistory()
+        const [details, setDetails] = useState([])
+        let currCategory= match.params.id
+        let url=`http://localhost:5000/api/work/details/${currCategory}`
+        let deleteUrl=`http://localhost:5000/api/work/delete/${currCategory}`
+        useEffect(()=>{
+            fetch(url)
+            .then(res => res.json())
+            .then(res=> setDetails(res))
+        },[])
+        const deleteHandler = (e)=>{
+            e.preventDefault()
+            fetch(deleteUrl , {method: 'DELETE'})
+            .then(res=> console.log(res))
+            history.push('/gallery')
             
+        }
+        const redactHandler = (e)=>{
+            e.preventDefault()
+            history.push(`/work/redact/${details._id}`)
+        }
+       return (
+        <div class="container-fluid">
+
+            <div class="row">
+                <div id="tm-section-1" class="tm-section">
+                    <div class="col-md-12">
+                         <h1 class="text-xs-center blue-text tm-page-2-title">{details.category}</h1>
+                        
+                        <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">{details.description}</p>
+                        <img src={details.image} class="img-fluid tm-banner-img" alt="Image" />
+                        <div class="tm-flex-center">
+                        <button class="btn btn-default tm-normal-btn tm-green-btn" onClick={deleteHandler}>Изтрий</button>
+                        <button class="btn btn-default tm-normal-btn tm-green-btn" onClick={redactHandler}>Редактирай</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
-  
 }
 export default Details

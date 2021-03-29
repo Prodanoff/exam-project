@@ -14,9 +14,29 @@ router.get('/:category', (req, res) => {
     Work.find({"category": `${searchedCategory}`})
         .then(works => {
             res.json(works);
-            console.log(works)
         });
 });
+router.get('/details/:id', (req, res) => {
+    Work.findOne({_id: req.params.id})
+        .then(work => {
+            res.json(work);
+            
+        });
+});
+router.delete('/delete/:id' , (req, res) =>{
+    Work.findByIdAndDelete(req.params.id, (err, docs) => {
+        if (err) {
+          console.log(err);
+        } else {
+          //console.log('Deleted : ', docs);
+          res.status(200).json(docs)
+        }
+      });
+})
+router.post('/redact/:id') , (req , res )  =>{
+    console.log(req.params.id)
+    console.log(req.body)
+}
 
 
 router.post('/', (req, res) => {

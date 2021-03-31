@@ -23,7 +23,7 @@ const Gallery = (
             .then(res => res.json())
             .then(res => setWorks(res))
     }, [match])
-
+            
     return (
 
         <div>

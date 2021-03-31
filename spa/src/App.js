@@ -28,13 +28,12 @@ function App() {
 				<Route path="/work/delete/:id" component={Gallery} />
 				<Route path="/work/redact/:id" component={Redact} />
 				<Route path="/gallery/:category" component={Gallery} />
-				<Route path="/gallery" component={Gallery} />
 				<Route path="/login" component={Login} />
 				<Route path="/register" component={Register} />
 				<Route path="/articles" component={Articles} />
 				<Route path="/addWork" component={Work} />
 				<Route path="/About" component={About} />
-				<Route path="/" component={Banner} />
+				<Route path="/" component={Gallery} />
 
 			</Switch>
 

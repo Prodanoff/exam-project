@@ -33,10 +33,11 @@ router.delete('/delete/:id' , (req, res) =>{
         }
       });
 })
-router.post('/redact/:id') , (req , res )  =>{
-    console.log(req.params.id)
+router.put('/:id' , (req, res) => {
     console.log(req.body)
-}
+    Work.findByIdAndUpdate(req.params.id , req.body )
+    .then(res=> console.log(res))
+})
 
 
 router.post('/', (req, res) => {

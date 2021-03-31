@@ -17,7 +17,7 @@ const OnePicture = ({
                 <p class="tm-description-text">
                     {category}
                 </p>
-                <a href={img}>
+                <a >
                     <img src={img} alt="Image" class="img-fluid" />
                 </a>
 

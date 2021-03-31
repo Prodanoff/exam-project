@@ -32,7 +32,7 @@ const Work = () => {
                 <section id="tm-section-4" class="tm-section">
                     <div class="tm-container">
 
-                        <h2 class="blue-text tm-title text-xs-center">Add work</h2>
+                        <h2 class="blue-text tm-title text-xs-center">Добави</h2>
 
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                             <form onSubmit={onSubmitHandler} class="tm-contact-form">

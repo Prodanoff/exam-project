@@ -1,6 +1,20 @@
 
 import { Link, NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+
 const Header = () => {
+    const [isLog, setIsLog] = useState()
+    useEffect(() => {
+        setIsLog(localStorage.username)
+        
+
+    })
+    const logoutHandler = () => {
+        localStorage.clear()
+        setIsLog(undefined)
+    }
+
+
     return (
         <div className="row">
 
@@ -11,16 +25,26 @@ const Header = () => {
                     <div class="collapse navbar-toggleable-sm" id="tmNavbar">
 
                         <ul className="nav navbar-nav">
-                            <li className="nav-item">
-                                <Link to="/login" className="nav-link">Login</Link>
-                            </li>
+                            {isLog ?
+                                (<li className="nav-item">
+                                    <Link onClick={logoutHandler} className="nav-link">Logout</Link>
+                                </li>)
+                                :
+                                (<li className="nav-item">
+                                    <Link to="/login" className="nav-link">Login</Link>
+                                </li>)
+
+
+
+                            }
+
+
                             <li className="nav-item">
                                 <Link to="/register" className="nav-link">Register</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/AddWork" className="nav-link">Add</Link>
                             </li>
-                           
                             <li className="nav-item">
                                 <Link to="/About" className="nav-link">About</Link>
                             </li>

@@ -13,13 +13,14 @@ import Details from './components/Details/Details'
 import Footer from './components/Footer/Footer'
 
 import { Route, Switch, withRouter } from 'react-router-dom'
+import{ useState } from 'react'
 
 
 function App() {
 
 	return (
 		<div className="App">
-			<Header />
+			<Header  />
 			<Banner />
 
 

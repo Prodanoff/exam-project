@@ -28,7 +28,7 @@ const Register = () => {
         })
             .then(res => res.json())
             .then(res => {
-                console.log(res)
+
                 if (res.message !== "Username allready registered") {
                     history.push('/login')
                 }
@@ -38,7 +38,9 @@ const Register = () => {
                         setErrMesg(``)
                     }, 3000);
                 }
+               
             })
+            
 
         }
         
@@ -50,7 +52,7 @@ const Register = () => {
                 <div class="tm-container">
 
                     <h2 class="blue-text tm-title text-xs-center">Register</h2>
-                    <h2 class="blue-text tm-title text-xs-center">{errMsg}</h2>
+                    <h2 class="red-text tm-title text-xs-center">{errMsg}</h2>
 
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                         <form onSubmit={registerHandler} method="post" class="tm-contact-form">

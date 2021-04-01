@@ -3,7 +3,10 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 router.post('/register', (req, res) => {
-  
+    if(req.body.password.length<6){
+        res.send({'message': 'Password too short'})
+        return
+    }
     let user = new User(req.body);
     User.findOne({ 'username': `${req.body.username}` }, function (err, finded) {
         
@@ -13,12 +16,12 @@ router.post('/register', (req, res) => {
                     console.log(createdUser);
                     res.status(201).json({ _id: createdUser._id });
                 });
+                
         }
         else {
-            console.log('Username allready registered')
             res.send({"message" : 'Username allready registered'})
         }
-
+        
     })
 
 
@@ -27,7 +30,7 @@ router.post('/register', (req, res) => {
 });
 
 router.post('/login', (req, res, next) => {
-    const { login: username, password } = req.body;
+    const { username, password } = req.body;
 
     User.where({ username, password })
         .findOne()
@@ -35,7 +38,7 @@ router.post('/login', (req, res, next) => {
             let token = jwt.sign({
                 _id: user._id,
                 username: user.username,
-            }, 'SOMESUPERSECRET', { expiresIn: '1h' });
+            }, 'MARGARITAPRODANOVA', { expiresIn: '1h' });
 
             res.status(200).json({
                 _id: user._id,

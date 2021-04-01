@@ -142,6 +142,7 @@ button:focus { outline: none; }
 .gray-bg { background-color: #F4F4F4; }
 .dark-gray-text { color: #666666; }
 .blue-text { color: gold; }
+.red-text {color: red;}
 .light-blue-text { color: gold; }
 
 .btn {

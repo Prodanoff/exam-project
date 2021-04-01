@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+
 const GalleryNavigation = ({
 
 }) => {
 
-
+  
     return (
         <div class="tm-flex-center">
             <Link to="/gallery/Вежди" class="btn btn-default tm-normal-btn tm-green-btn" >Вежди</Link>

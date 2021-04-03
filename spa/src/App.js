@@ -12,7 +12,7 @@ import Details from './components/Details/Details'
 import Footer from './components/Footer/Footer'
 
 import { Route, Switch, withRouter } from 'react-router-dom'
-import{ useState } from 'react'
+import { useState } from 'react'
 
 
 function App() {
@@ -24,14 +24,17 @@ function App() {
 
 
 			<Switch>
-				<Route path="/work/details/:id" component={Details} />
+				<Route path="/work/details/:id"
+					render={(props) => (
+						<Details {...props} logState={logState} />
+					)} />
 				<Route path="/work/delete/:id" component={Gallery} />
 				<Route path="/work/redact/:id" component={Redact} />
 				<Route path="/gallery/:category" component={Gallery} />
 				<Route path="/login"
-							 render={(props) => (
-								<Login {...props} logState={logState} />
-							 )}
+					render={(props) => (
+						<Login {...props} logState={logState} />
+					)}
 				/>
 				<Route path="/register" component={Register} />
 				<Route path="/articles" component={Articles} />

@@ -5,6 +5,7 @@ const Header = ({logState}) => {
     const [isLog, setIsLog] = useState()
     useEffect(() => {
         setIsLog(localStorage.username)
+       
         
 
     })
@@ -32,9 +33,6 @@ const Header = ({logState}) => {
                                 (<li className="nav-item">
                                     <Link to="/login" className="nav-link">Login</Link>
                                 </li>)
-
-
-
                             }
 
 

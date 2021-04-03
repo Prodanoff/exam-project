@@ -3,7 +3,7 @@ import{useHistory} from "react-router-dom"
 
 
 const Login = ({ logState }) => {
-    const [, setIsLog] = logState
+    const [ isLog, setIsLog] = logState
     const [errMsg, setErrMesg] = useState(``)
     const history=useHistory()
     const loginHandler = function (e) {

@@ -14,12 +14,9 @@ const About = () => {
                         Etiam at rhoncus nisl. Nunc rutrum ac ante euismod cursus.
                         Suspendisse imperdiet feugiat massa nec iaculis.
                     </p>
-                    
-                    
                 </div>
             
             </div>
-           
             
         </div>
             

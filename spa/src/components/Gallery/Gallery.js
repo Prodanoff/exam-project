@@ -3,6 +3,7 @@ import GalleryNavigation from './GalleryNavigation'
 import LoadMore from './LoadMore'
 import { useState, useEffect, Component } from 'react'
 import { Link } from 'react-router-dom'
+import './Gallery.css'
 const Gallery = (
     {
         match

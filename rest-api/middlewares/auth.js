@@ -6,7 +6,7 @@ function auth(req, res, next) {
         let token = authorizationHeader.split(' ')[1];
 
         try {
-            let decoded = jwt.verify(token, 'SOMESUPERSECRET');
+            let decoded = jwt.verify(token, 'MARGARITAPRODANOVA');
 
             req.user = decoded;
         } catch (error) {

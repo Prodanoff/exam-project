@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import './Header.css'
 
 const Header = ({logState}) => {
     const [isLog, setIsLog] = useState()

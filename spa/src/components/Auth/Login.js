@@ -2,7 +2,8 @@ import { useState  } from 'react'
 import{useHistory} from "react-router-dom"
 
 
-const Login = () => {
+const Login = ({ logState }) => {
+    const [, setIsLog] = logState
     const [errMsg, setErrMesg] = useState(``)
     const history=useHistory()
     const loginHandler = function (e) {
@@ -33,6 +34,7 @@ const Login = () => {
                     localStorage.setItem('userToken', res.token);
                     localStorage.setItem('username', res.username);
                     localStorage.setItem('userId', res._id);
+                    setIsLog(localStorage.username)
                     history.push('/')
                     
                 }

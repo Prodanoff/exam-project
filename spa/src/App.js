@@ -1,4 +1,3 @@
-
 import './App.css';
 import Header from './components/Header/Header'
 import Articles from './components/Articles/Articles'
@@ -17,10 +16,10 @@ import{ useState } from 'react'
 
 
 function App() {
-
+	const logState = useState()
 	return (
 		<div className="App">
-			<Header  />
+			<Header logState={logState} />
 			<Banner />
 
 
@@ -29,7 +28,11 @@ function App() {
 				<Route path="/work/delete/:id" component={Gallery} />
 				<Route path="/work/redact/:id" component={Redact} />
 				<Route path="/gallery/:category" component={Gallery} />
-				<Route path="/login" component={Login} />
+				<Route path="/login"
+							 render={(props) => (
+								<Login {...props} logState={logState} />
+							 )}
+				/>
 				<Route path="/register" component={Register} />
 				<Route path="/articles" component={Articles} />
 				<Route path="/addWork" component={Work} />

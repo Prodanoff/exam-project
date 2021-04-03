@@ -1,8 +1,7 @@
-
 import { Link, NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-const Header = () => {
+const Header = ({logState}) => {
     const [isLog, setIsLog] = useState()
     useEffect(() => {
         setIsLog(localStorage.username)

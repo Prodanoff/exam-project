@@ -17,9 +17,9 @@ const OnePicture = ({
                 <p class="tm-description-text">
                     {category}
                 </p>
-                <a >
+                <Link to={`/work/details/${id}`}>
                     <img src={img} alt="Image" class="img-fluid" />
-                </a>
+                </Link>
 
                 <div class="tm-description-box">
                     <p class="tm-description-text">

@@ -35,6 +35,7 @@ const Login = ({ logState }) => {
                     localStorage.setItem('username', res.username);
                     localStorage.setItem('userId', res._id);
                     setIsLog(localStorage.username)
+                    document.cookie= `mpToken = ${res.token}`
                     history.push('/')
                     
                 }

@@ -9,7 +9,7 @@ const Details = (
     }
 ) => {
     const history = useHistory()
-    const [isLog, setIsLog] = useState()
+    const [isLog, setIsLog] = logState
     const [details, setDetails] = useState([])
     let currCategory = match.params.id
     let url = `http://localhost:5000/api/work/details/${currCategory}`
@@ -42,7 +42,7 @@ const Details = (
                         <h1 class="text-xs-center blue-text tm-page-2-title">{details.category}</h1>
 
                         <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">{details.description}</p>
-                        <img src={details.image} class="img-fluid tm-banner-img" alt="Image" />
+                        <img  src={details.image} class="img-fluid tm-banner-img" alt="Image" />
                         <div class="tm-flex-center">
                             {isLog?
                             (<>

@@ -10,6 +10,7 @@ import Redact from './components/Work/Redact'
 import About from './components/About/About'
 import Details from './components/Details/Details'
 import Footer from './components/Footer/Footer'
+import Contacts from './components/About/Contacts'
 
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { useState } from 'react'
@@ -36,6 +37,7 @@ function App() {
 						<Login {...props} logState={logState} />
 					)}
 				/>
+				<Route path="/Contacts" component={Contacts} />
 				<Route path="/register" component={Register} />
 				<Route path="/articles" component={Articles} />
 				<Route path="/addWork" component={Work} />

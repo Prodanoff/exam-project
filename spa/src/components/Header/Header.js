@@ -3,16 +3,15 @@ import { useState, useEffect } from 'react'
 import './Header.css'
 
 const Header = ({logState}) => {
-    const [isLog, setIsLog] = useState()
+    const [isLog, setIsLog] = logState
     useEffect(() => {
         setIsLog(localStorage.username)
        
-        
-
     })
     const logoutHandler = () => {
         localStorage.clear()
         setIsLog(undefined)
+        
     }
 
 
@@ -40,9 +39,15 @@ const Header = ({logState}) => {
                             <li className="nav-item">
                                 <Link to="/register" className="nav-link">Register</Link>
                             </li>
+                            {isLog ?
+                            <>
                             <li className="nav-item">
                                 <Link to="/AddWork" className="nav-link">Add</Link>
                             </li>
+                            </>
+                            :
+                            null
+                            }
                             <li className="nav-item">
                                 <Link to="/About" className="nav-link">About</Link>
                             </li>

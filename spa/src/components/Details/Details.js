@@ -18,10 +18,14 @@ const Details = (
         fetch(url)
             .then(res => res.json())
             .then(res => setDetails(res))
-            setIsLog(localStorage.username)
+        let cookieName = document.cookie.split(`=`)[0]
+        if (cookieName == 'mpToken'){
+            setIsLog(document.cookie)
+        }
+            
     }
-    
-    , [])
+
+        , [])
     const deleteHandler = (e) => {
         e.preventDefault()
         fetch(deleteUrl, { method: 'DELETE' })
@@ -42,17 +46,17 @@ const Details = (
                         <h1 class="text-xs-center blue-text tm-page-2-title">{details.category}</h1>
 
                         <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">{details.description}</p>
-                        <img  src={details.image} class="img-fluid tm-banner-img" alt="Image" />
+                        <img src={details.image} class="img-fluid tm-banner-img" alt="Image" />
                         <div class="tm-flex-center">
-                            {isLog?
-                            (<>
-                            <button class="btn btn-default tm-normal-btn tm-green-btn" onClick={deleteHandler}>Изтрий</button>
-                            <button class="btn btn-default tm-normal-btn tm-green-btn" onClick={redactHandler}>Редактирай</button>
-                            </>)
-                            :
-                            null
+                            {isLog ?
+                                (<>
+                                    <button class="btn btn-default tm-normal-btn tm-green-btn" onClick={deleteHandler}>Изтрий</button>
+                                    <button class="btn btn-default tm-normal-btn tm-green-btn" onClick={redactHandler}>Редактирай</button>
+                                </>)
+                                :
+                                null
                             }
-                            
+
                         </div>
                     </div>
                 </div>

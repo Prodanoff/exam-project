@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { FacebookProvider, Like ,Page} from 'react-facebook'
 import './Header.css'
 
 const Header = ({ logState }) => {
@@ -27,6 +28,7 @@ const Header = ({ logState }) => {
                     <div class="collapse navbar-toggleable-sm" id="tmNavbar">
 
                         <ul className="nav navbar-nav">
+                            
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">Начало</Link>
                             </li>

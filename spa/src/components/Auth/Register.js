@@ -9,8 +9,21 @@ const Register = () => {
         let username = e.target.username.value
         let password = e.target.password.value
         let repeatPassword=e.target.repeatPassword.value
+        console.log(e.target.username.value)
         if(repeatPassword!==password){
-            setErrMesg(`Password's not match`)
+            setErrMesg(`Паролите не съвпадат!`)
+                    setTimeout(() => {
+                        setErrMesg(``)
+                    }, 3000);
+        }
+        else if(password.length<6){
+            setErrMesg(`Паролата трябва да е най-малко 6 знака!`)
+                    setTimeout(() => {
+                        setErrMesg(``)
+                    }, 3000);
+        }
+        else if(username.length<6){
+            setErrMesg(`Потребителското име трябва да е най-малко 6 знака!`)
                     setTimeout(() => {
                         setErrMesg(``)
                     }, 3000);
@@ -51,7 +64,7 @@ const Register = () => {
             <section id="tm-section-4" class="tm-section">
                 <div class="tm-container">
 
-                    <h2 class="blue-text tm-title text-xs-center">Register</h2>
+                    <h2 class="blue-text tm-title text-xs-center">Регистрация</h2>
                     <h2 class="red-text tm-title text-xs-center">{errMsg}</h2>
 
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">

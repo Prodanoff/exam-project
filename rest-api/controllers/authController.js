@@ -15,7 +15,8 @@ router.post('/register', (req, res) => {
                 .then(createdUser => {
                     console.log(createdUser);
                     res.status(201).json({ _id: createdUser._id });
-                });
+                })
+                .catch(err=>{console.log(err)})
                 
         }
         else {

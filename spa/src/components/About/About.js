@@ -13,7 +13,7 @@ const About = () => {
                         <p className="text-xs-center tm-page-2-p tm-page-2-subtitle">
                             Някво съдържание. После ще да го попълня ! Да сменя снимките също!
                     </p>
-                
+                       
                     </div>
 
                 </div>

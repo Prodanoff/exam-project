@@ -1,6 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { FacebookProvider, Like ,Page} from 'react-facebook'
 import './Header.css'
 
 const Header = ({ logState }) => {
